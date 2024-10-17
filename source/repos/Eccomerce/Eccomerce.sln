@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eccomerce", "Eccomerce.csproj", "{8E895912-375F-4BFC-BFC3-49EBD06B2341}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E895912-375F-4BFC-BFC3-49EBD06B2341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E895912-375F-4BFC-BFC3-49EBD06B2341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E895912-375F-4BFC-BFC3-49EBD06B2341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E895912-375F-4BFC-BFC3-49EBD06B2341}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEDD9FFD-D2CA-424B-93FF-FFC0198BD105}
+	EndGlobalSection
+EndGlobal
