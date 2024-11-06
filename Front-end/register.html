@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartsKing Register</title>
+    <link rel="stylesheet" href="css/register-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Account</h1>
+        <form id="register-form">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <small>Password must be at least 8 characters long</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            
+            <button type="submit">Register</button>
+            
+            <div class="login-link">
+                Already have an account? <a href="index.html">Login here</a>
+            </div>
+        </form>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+</html>
