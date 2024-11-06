@@ -1,0 +1,13 @@
+# Ignorar la carpeta .vs (Visual Studio)
+.vs/
+
+# Ignorar los archivos temporales de Visual Studio
+*.vspscc
+*.vssscc
+
+# Ignorar los archivos de compilación
+bin/
+obj/
+
+# Ignorar el directorio de configuración de usuario
+.idea/
