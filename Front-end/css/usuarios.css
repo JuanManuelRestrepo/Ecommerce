@@ -1,71 +1,165 @@
+/* usuarios.css */
+
+/* Variables de color para personalización */
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --background-color: #f8f9fa;
+    --sidebar-background: #f3e9fe;
+    --text-color: #2d3436;
+    --icon-color: #2d3436;
+    --card-background: #ffffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --spacing: 20px;
+}
+
+/* Reset básico */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.usuarios-container {
-    width: 80%;
-    max-width: 800px;
-    background-color: #ffffff;
+/* Estilos de la barra lateral */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: white;
     padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.perfil-usuario {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.perfil-usuario img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.info-usuario h3 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.info-usuario p {
-    margin: 5px 0;
-}
-
-#productos-usuario {
-    margin-top: 20px;
-}
-
-.productos-usuario h3 {
-    margin: 0 0 10px;
-}
-
-.producto {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.logo-container {
+    padding: 20px 0;
     text-align: center;
 }
 
-.producto img {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+.logo-container h1 {
+    color: var(--primary-color);
+    font-size: 24px;
 }
 
-.formulario-oculto {
-    display: none;
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.nav-item i {
+    margin-right: 15px;
+    width: 10px;
+    text-align: center;
+}
+
+/*
+.sidebar .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .icon:hover {
+    background-color: var(--secondary-color);
+}
+
+.sidebar .menu-item {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.sidebar .menu-item:hover {
+    color: var(--primary-color);
+}
+*/
+/* Contenedor de perfil de usuario */
+.user-profile {
+    max-width: 600px;
+    margin: auto;
+    padding: var(--spacing);
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-left: 100px; /* Para evitar que el contenido principal esté muy cerca de la barra */
+}
+
+/* Estilos para la lista de productos */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    margin-top: var(--spacing);
+}
+
+.product-card {
+    width: calc(50% - var(--spacing) / 2);
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing);
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.product-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: var(--secondary-color);
 }
