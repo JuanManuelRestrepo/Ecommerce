@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Cart - Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
-    <!-- Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -15,39 +14,13 @@
             <div class="logo-container">
                 <h1>CartsKing</h1>
             </div>
-            
             <nav class="sidebar-nav">
                 <ul>
-                    <li>
-                        <a href="dashboard.html" class="nav-item">
-                            <i class="fas fa-plus"></i>
-                            <span>Principal</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-item">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span>Compras</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="usuarios.html" class="nav-item">
-                            <i class="fas fa-user"></i>
-                            <span>Usuario</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-item">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Carrito</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-item">
-                            <i class="fas fa-cog"></i>
-                            <span>Ajustes</span>
-                        </a>
-                    </li>
+                    <li><a href="dashboard.html" class="nav-item"><i class="fas fa-plus"></i><span>Principal</span></a></li>
+                    <li><a href="#" class="nav-item"><i class="fas fa-shopping-bag"></i><span>Compras</span></a></li>
+                    <li><a href="usuarios.html" class="nav-item"><i class="fas fa-user"></i><span>Usuario</span></a></li>
+                    <li><a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+                    <li><a href="#" class="nav-item"><i class="fas fa-cog"></i><span>Ajustes</span></a></li>
                 </ul>
             </nav>
         </aside>
@@ -56,16 +29,10 @@
         <main class="main-content">
             <!-- Barra superior -->
             <header class="top-bar">
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
                 <div class="top-bar-right">
-                    <button class="notification-btn">
-                        <i class="fas fa-bell"></i>
-                    </button>
-                    <button class="settings-btn">
-                        <i class="fas fa-cog"></i>
-                    </button>
+                    <button class="notification-btn"><i class="fas fa-bell"></i></button>
+                    <button class="settings-btn"><i class="fas fa-cog"></i></button>
                 </div>
             </header>
 
@@ -76,71 +43,45 @@
                     <a href="#" class="view-all">Ver todo →</a>
                 </div>
                 <div class="categories-grid">
-                    <div class="category-card">
+                    <div class="category-card" data-category="vehiculos">
                         <img src="img/vehiculos.jpg" alt="Vehículos">
                         <h3>Vehículos</h3>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" data-category="ropa">
                         <img src="img/ropa.jpg" alt="Ropa">
                         <h3>Ropa</h3>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" data-category="hogar">
                         <img src="img/hogar.jpg" alt="Hogar">
                         <h3>Hogar</h3>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" data-category="accesorios">
                         <img src="img/accesorios.jpg" alt="Accesorios">
                         <h3>Accesorios</h3>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" data-category="deporte">
                         <img src="img/deporte.jpg" alt="Deporte">
                         <h3>Deporte</h3>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" data-category="tecnologia">
                         <img src="img/tecnologia.jpg" alt="Tecnología">
                         <h3>Tecnología</h3>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" data-category="belleza">
                         <img src="img/belleza.jpg" alt="Belleza">
                         <h3>Belleza</h3>
                     </div>
                 </div>
+                                
             </section>
 
             <!-- Sección de ofertas -->
             <section class="offers-section">
                 <div class="section-header">
-                    <h2>Ofertas</h2>
+                    <h2  id="category-title">Ofertas</h2>
                     <a href="#" class="view-all">Ver todo →</a>
-                </div>
-                <div class="offers-grid">
-                    <div class="offer-card">
-                        <img src="img/oferta1.jpg" alt="Oferta 1">
-                        <div class="offer-details">
-                            <h3>Conjunto Deportivo</h3>
-                            <p class="price">$89.99</p>
-                        </div>
-                    </div>
-                    <div class="offer-card">
-                        <img src="img/oferta2.jpg" alt="Oferta 2">
-                        <div class="offer-details">
-                            <h3>Proteína Whey</h3>
-                            <p class="price">$49.99</p>
-                        </div>
-                    </div>
-                    <div class="offer-card">
-                        <img src="img/oferta3.jpg" alt="Oferta 3">
-                        <div class="offer-details">
-                            <h3>Silla Ergonómica</h3>
-                            <p class="price">$199.99</p>
-                        </div>
-                    </div>
-                    <div class="offer-card">
-                        <img src="img/oferta4.jpg" alt="Oferta 4">
-                        <div class="offer-details">
-                            <h3>Árbol de Navidad</h3>
-                            <p class="price">$129.99</p>
-                        </div>
+                    <div id="offers-container" class="offers-grid">
+                        <!-- Aquí se cargarán dinámicamente las ofertas al seleccionar una categoría -->
                     </div>
                 </div>
             </section>

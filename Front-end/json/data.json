@@ -1,0 +1,73 @@
+
+{
+    "categorias": [
+    {
+        "id": "vehiculos",
+        "imagen": "img/vehiculos.jpg",
+        "nombre": "Vehículos",
+        "ofertas": [
+        {"nombre": "Auto Deportivo", "precio": "$200,000", "imagen": "img/auto.jpg"},
+        {"nombre": "Moto", "precio": "$15,000", "imagen": "img/moto.jpg"}
+        ]
+    },
+    {
+        "id": "ropa",
+        "imagen": "img/ropa.jpg",
+        "nombre": "Ropa",
+        "ofertas": [
+        {"nombre": "Conjunto Deportivo", "precio": "$89.99", "imagen": "img/oferta1.jpg"},
+        {"nombre": "Abrigo de Invierno", "precio": "$150.00", "imagen": "img/abrigo.jpg"}
+        ]
+    },
+    {
+        "id": "hogar",
+        "imagen": "img/hogar.jpg",
+        "nombre": "Hogar",
+        "ofertas": [
+        {"nombre": "Mesa familiar", "precio": "$89.99", "imagen": "img/oferta1.jpg"},
+        {"nombre": "Escritorio", "precio": "$150.00", "imagen": "img/abrigo.jpg"}
+        ]
+    },
+    {
+
+        "id": "accesorios",
+        "imagen": "img/ropa.jpg",
+        "nombre": "Ropa",
+        "ofertas": [
+        {"nombre": "Conjunto Deportivo", "precio": "$89.99", "imagen": "img/oferta1.jpg"},
+        {"nombre": "Abrigo de Invierno", "precio": "$150.00", "imagen": "img/abrigo.jpg"}
+        ]
+    },
+    {
+        "id": "deporte",
+        "imagen": "img/ropa.jpg",
+        "nombre": "Ropa",
+        "ofertas": [
+        {"nombre": "Conjunto Deportivo", "precio": "$89.99", "imagen": "img/oferta1.jpg"},
+        {"nombre": "Abrigo de Invierno", "precio": "$150.00", "imagen": "img/abrigo.jpg"}
+        ]
+    },
+    {
+        "id": "tecnologia",
+        "imagen": "img/ropa.jpg",
+        "nombre": "Ropa",
+        "ofertas": [
+        {"nombre": "Conjunto Deportivo", "precio": "$89.99", "imagen": "img/oferta1.jpg"},
+        {"nombre": "Abrigo de Invierno", "precio": "$150.00", "imagen": "img/abrigo.jpg"}
+        ]
+    },
+    {
+        "id": "belleza",
+        "imagen": "img/ropa.jpg",
+        "nombre": "Ropa",
+        "ofertas": [
+        {"nombre": "Conjunto Deportivo", "precio": "$89.99", "imagen": "img/oferta1.jpg"},
+        {"nombre": "Abrigo de Invierno", "precio": "$150.00", "imagen": "img/abrigo.jpg"}
+        ]
+    }
+
+
+
+    
+    ]
+    }

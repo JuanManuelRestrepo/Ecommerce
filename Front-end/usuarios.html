@@ -19,62 +19,62 @@
         
         <nav class="sidebar-nav">
             <ul>
-                <li>
-                    <a href="dashboard.html" class="nav-item">
-                        <i class="fas fa-plus"></i>
-                        <span>Principal</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span>Compras</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="usuarios.html" class="nav-item">
-                        <i class="fas fa-user"></i>
-                        <span>Usuario</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Carrito</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-cog"></i>
-                        <span>Ajustes</span>
-                    </a>
-                </li>
+                <li><a href="dashboard.html" class="nav-item"><i class="fas fa-plus"></i><span>Principal</span></a></li>
+                <li><a href="#" class="nav-item"><i class="fas fa-shopping-bag"></i><span>Compras</span></a></li>
+                <li><a href="usuarios.html" class="nav-item"><i class="fas fa-user"></i><span>Usuarios</span></a></li>
+                <li><a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Carritos</span></a></li>
+                <li><a href="#" class="nav-item"><i class="fas fa-cog"></i><span>Ajustes</span></a></li>
             </ul>
         </nav>
     </aside>
 
+    
+
     <!-- Contenedor principal del perfil de usuario -->
-    <div class="user-profile">
-        <h1>Perfil de Usuario</h1>
-        <p>Bienvenido a la sección de perfil de usuario. Aquí puedes ver y actualizar tu información personal.</p>
-
-        <!-- Ejemplo de productos -->
-        <div class="product-list">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Producto 1">
-                <h2>Producto 1</h2>
-                <p>Descripción breve del producto.</p>
-                <button>Agregar al Carrito</button>
+    <main class="user-profile">
+        <section class="user-description">
+            <div class="profile-picture">
+                <img src="https://www.blogdelfotografo.com/wp-content/uploads/2022/01/retrato-anillo-luz.webp" alt="Foto de usuario">
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Producto 2">
-                <h2>Producto 2</h2>
-                <p>Descripción breve del producto.</p>
-                <button>Agregar al Carrito</button>
+            <div class="profile-info">
+                <h2>Andres Dussan</h2>
+                <p>Hola, mi nombre es Andres Dussan, manejo una distribuidora nacional. Son productos deportivos...</p>
+                <button>Leer más...</button>
             </div>
-            <!-- Agrega más tarjetas de productos aquí -->
-        </div>
-    </div>
+        </section>
 
+        <!-- Formulario para agregar productos -->
+        <section id="agregar-producto">
+            <h3>Agregar Producto</h3>
+            <form id="form-producto">
+                <input type="text" id="nombre" placeholder="Nombre del producto" required>
+                <input type="text" id="descripcion" placeholder="Descripción del producto" required>
+                <input type="number" id="precio" placeholder="Precio" required>
+                <input type="text" id="imagen" placeholder="URL de la imagen" required>
+                <button type="submit">Agregar Producto</button>
+            </form>
+        </section>
+
+        <!-- Lista de productos -->
+        <section id="productos" class="products-section">
+            <h3>Productos</h3>
+            <div id="lista-productos" class="product-list">
+                <div class="product-card">
+                    <img src="https://th.bing.com/th/id/R.d1afb94b400117fc15454cff2894031f?rik=iseYuX9yp0o4wQ&pid=ImgRaw&r=0" alt="Guantes blancos">
+                    <h4>Guantes blancos</h4>
+                    <p>Añadir a carrito • Hace 23 min</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://th.bing.com/th/id/OIP.Q9RnOJwv_vVMnuv2GZZ6zgHaHa?rs=1&pid=ImgDetMain" alt="Kit de mancuernas">
+                    <h4>Kit de mancuernas</h4>
+                    <p>Diferentes pesos en un solo kit</p>
+                </div>
+                <!-- Nuevos productos se agregarán aquí -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Enlace al archivo JS externo -->
+    <script src="js/usuario.js"></script>
 </body>
 </html>
