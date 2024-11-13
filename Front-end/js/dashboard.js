@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
         hogar:{
             nombre: "Hogar",
             ofertas: [
-                {nombre: "Conjunto Deportivo", precio: "$89.99", imagen: "img/oferta1.jpg"},
-                {nombre: "Abrigo de Invierno", precio: "$150.00", imagen: "img/abrigo.jpg"}
+                {nombre: "Mueble", precio: "$89.99", imagen: "img/mueble.jpg"},
+                {nombre: "Mesa", precio: "$150.00", imagen: "img/mesa.jpg"}
             ]
 
         },
         accesorios:{
             nombre: "Accesorios",
             ofertas: [
-                {nombre: "Conjunto Deportivo", precio: "$89.99", imagen: "img/oferta1.jpg"},
-                {nombre: "Abrigo de Invierno", precio: "$150.00", imagen: "img/abrigo.jpg"}
+                {nombre: "Cadena", precio: "$89.99", imagen: "img/cadena.jpg"},
+                {nombre: "Reloj", precio: "$150.00", imagen: "img/reloj.jpg"}
             ]
 
         },
@@ -73,16 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
         deporte:{
             nombre: "Deporte",
             ofertas: [
-                {nombre: "Conjunto Deportivo", precio: "$89.99", imagen: "img/oferta1.jpg"},
-                {nombre: "Abrigo de Invierno", precio: "$150.00", imagen: "img/abrigo.jpg"}
+                {nombre: "Balon de futbol", precio: "$89.99", imagen: "img/balon.jpg"},
+                {nombre: "Raquetas de Tenis", precio: "$150.00", imagen: "img/raqueta.jpg"}
             ]
 
         },
             tecnologia:{
             nombre: "Tecnologia",
             ofertas: [
-                {nombre: "Conjunto Deportivo", precio: "$89.99", imagen: "img/oferta1.jpg"},
-                {nombre: "Abrigo de Invierno", precio: "$150.00", imagen: "img/abrigo.jpg"}
+                {nombre: "Computador", precio: "$89.99", imagen: "img/cpu.jpg"},
+                {nombre: "Audifonos", precio: "$150.00", imagen: "img/audifonos.jpg"}
             ]
 
         },
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
         belleza:{
             nombre: "Belleza",
             ofertas: [
-                {nombre: "Conjunto Deportivo", precio: "$89.99", imagen: "img/oferta1.jpg"},
-                {nombre: "Abrigo de Invierno", precio: "$150.00", imagen: "img/abrigo.jpg"}
+                {nombre: "Labial", precio: "$89.99", imagen: "img/labial.jpg"},
+                {nombre: "Pestanina", precio: "$150.00", imagen: "img/pestanina.jpg"}
             ]
 
         },

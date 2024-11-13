@@ -8,12 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const precio = document.getElementById("precio").value;
         const imagen = document.getElementById("imagen").value;
 
+        const categoria = "deporte"; // Puedes cambiar esto para que sea dinámico si tienes diferentes categorías
+
         // Crear un objeto del producto
         const nuevoProducto = {
             nombre,
             descripcion,
             precio,
-            imagen
+            imagen,
+            categoria
         };
 
         // Guardar en localStorage
@@ -39,3 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarSeccion("productos");
     });
 });
+
+// Definir la función para mostrar la sección solicitada
+function mostrarSeccion(seccionId) {
+    document.getElementById("agregar-producto").style.display = "none";
+    document.getElementById("productos").style.display = "none";
+    document.getElementById(seccionId).style.display = "block";
+}
