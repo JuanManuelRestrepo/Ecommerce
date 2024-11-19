@@ -41,11 +41,46 @@ document.addEventListener('DOMContentLoaded', function() {
         // Cambiar a la vista de productos para ver el producto agregado
         mostrarSeccion("productos");
     });
+
+    function mostrarSeccion(seccionId) {
+        document.getElementById("agregar-producto").style.display = "none";
+        document.getElementById("productos").style.display = "none";
+        document.getElementById(seccionId).style.display = "block";
+    }
+
+    function cargarProductosPorCategoria(categoria) {
+    const productos = JSON.parse(localStorage.getItem('productos')) || [];
+    const productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+
+    const offersContainer = document.getElementById('offers-container');
+    offersContainer.innerHTML = ''; // Limpiar las ofertas previas
+
+    productosFiltrados.forEach((producto, index) => {
+        const productoDiv = document.createElement("div");
+        productoDiv.classList.add("offer-card");
+        productoDiv.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <div class="offer-details">
+                <h3>${producto.nombre}</h3>
+                <p>${producto.descripcion}</p>
+                <p class="price">$${producto.precio}</p>
+                <button class="delete-btn" data-index="${index}" data-category="${categoria}">Eliminar</button>
+            </div>
+        `;
+        offersContainer.appendChild(productoDiv);
+    });
+
+    // Asignar eventos a los botones de eliminar
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const index = this.getAttribute('data-index');
+            const categoria = this.getAttribute('data-category');
+            eliminarProducto(index, categoria);
+        });
+    });
+}
+
+    
 });
 
-// Definir la función para mostrar la sección solicitada
-function mostrarSeccion(seccionId) {
-    document.getElementById("agregar-producto").style.display = "none";
-    document.getElementById("productos").style.display = "none";
-    document.getElementById(seccionId).style.display = "block";
-}
+
