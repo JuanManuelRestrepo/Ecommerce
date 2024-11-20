@@ -47,10 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Función para cargar productos por categoría
-    function cargarProductosPorCategoria(categoria) {
+    function cargarProductosPorCategoria(categoria = null) {
         const productos = JSON.parse(localStorage.getItem('productos')) || [];
-        const productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+        let productosFiltrados = productos;
 
+        if (categoria) {
+            productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+        }
         const offersContainer = document.getElementById('offers-container');
         offersContainer.innerHTML = ''; // Limpiar las ofertas previas
 
@@ -63,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h3>${producto.nombre}</h3>
                     <p>${producto.descripcion}</p>
                     <p class="price">$${producto.precio}</p>
-                    <button class="delete-btn" data-index="${index}" data-category="${categoria}">Eliminar</button>
+                    <p class="category">Categoría: ${producto.categoria}</p>
+                    <button class="delete-btn" data-index="${index}" data-category="${producto.categoria}">Eliminar</button>
                 </div>
             `;
             offersContainer.appendChild(productoDiv);
@@ -78,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
 
     // Función para eliminar productos
     function eliminarProducto(index, categoria) {

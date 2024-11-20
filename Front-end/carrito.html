@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/usuarios.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
 
@@ -32,43 +32,30 @@
             </div>
             <div class="profile-info">
                 <h2>Andres Dussan</h2>
-                <p id="user-bio">Hola, mi nombre es Andres Dussan, manejo una distribuidora nacional. Son productos deportivos, diseñados para satisfacer las necesidades de nuestros clientes...</p>
-                <button id="toggle-bio">Leer más...</button>
+                <p id="user-bio"></p>
             </div>
         </section>
 
         <!-- Formulario para agregar productos -->
         <section id="agregar-producto">
-            <h3>Agregar Producto</h3>
-            <form id="add-product-form">
-                <input type="text" id="product-name" placeholder="Nombre del Producto" required>
-                <textarea id="product-description" placeholder="Descripción" required></textarea>
-                <input type="number" id="product-price" placeholder="Precio" required>
-                <input type="text" id="product-image" placeholder="URL de la imagen" required>
-            
-                <select id="product-category">
-                    <option value="deporte">Deporte</option>
-                    <option value="vehiculos">Vehículos</option>
-                    <option value="ropa">Ropa</option>
-                    <option value="hogar">Hogar</option>
-                    <option value="accesorios">Accesorios</option>
-                    <option value="tecnologia">Tecnología</option>
-                    <option value="belleza">Belleza</option>
-                </select>
-            
-                <button type="submit">Agregar Producto</button>
-            </form>
+
         </section>
 
         <!-- Lista de productos -->
         <section id="productos" class="products-section">
-            <h3>Productos</h3>
+            <h3>Productos Agregados al carrito</h3>
             <div id="lista-productos" class="product-list">
                 <!-- Aquí se cargarán los productos almacenados en localStorage -->
+                <div class="productos-agregados">
+                    <img src="https://static.vecteezy.com/system/resources/previews/010/161/408/original/3d-rendering-magnifying-glass-with-question-mark-icon-symbol-isolated-png.png" alt="Imagen de computadora con signo de interrogación">
+                    <p>¡Haz tu primera compra!<br>Aquí podrás ver tus compras y hacer el seguimiento de tus envíos.</p>
+                    <a href="dashboard.html" class="ver-ofertas">Ver ofertas del día</a>
+                </div>
             </div>
         </section>
+        
     </main>
 
-    <script src="js/usuarios.js"></script>
+    <script src="js/.js"></script>
 </body>
 </html>
