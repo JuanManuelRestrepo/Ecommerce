@@ -115,7 +115,9 @@ body {
 }
 
 .product-card img {
-    width: 100%;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
     border-radius: var(--border-radius);
 }
 
@@ -144,6 +146,13 @@ body {
     background-color: var(--secondary-color);
 }
 
+/*ajuste para las imagenes en la lista de productos*/
+.product-image{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
@@ -157,4 +166,24 @@ body {
     .sidebar.active {
         left: 0;
     }
+}
+
+/* Ajuste para las imágenes en la lista de productos */
+.producto img {
+    width: 150px;  /* Ancho fijo más pequeño */
+    height: 150px; /* Alto fijo más pequeño */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: var(--border-radius);
+}
+
+.producto {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 20px); /* Para mostrar 3 productos por fila */
 }

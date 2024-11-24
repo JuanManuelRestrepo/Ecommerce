@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("form-producto").addEventListener("submit", function(event) {
+    document.getElementById("add-product-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
         // Obtener los valores del formulario
-        const nombre = document.getElementById("nombre").value;
-        const descripcion = document.getElementById("descripcion").value;
-        const precio = document.getElementById("precio").value;
-        const imagen = document.getElementById("imagen").value;
-
-        const categoria = "deporte"; // Puedes cambiar esto para que sea dinámico si tienes diferentes categorías
-
+        const nombre = document.getElementById("product-name").value;
+        const descripcion = document.getElementById("product-description").value;
+        const precio = document.getElementById("product-price").value;
+        const imagen = document.getElementById("product-image").value;
+        const categoria = document.getElementById("categoria").value;
+        const cantidad = document.getElementById("product-quantity").value;
         // Crear un objeto del producto
         const nuevoProducto = {
             nombre,
             descripcion,
             precio,
             imagen,
-            categoria
+            categoria,
+            cantidad
         };
 
         // Guardar en localStorage
@@ -24,23 +24,30 @@ document.addEventListener('DOMContentLoaded', function() {
         productos.push(nuevoProducto);
         localStorage.setItem("productos", JSON.stringify(productos));
 
-        // Añadir el nuevo producto a la lista de productos en la página de usuario
+        //mostrar el producto en la lista
+        mostrarProductosEnLista(nuevoProducto);
+
+        //limpiar el formulario
+        this.reset();
+
+        alert("Producto agregado correctamente");
+
+    });
+
+    //funcion para mostrar el producto en la lista
+    function mostrarProductosEnLista(producto) {
         const productoDiv = document.createElement("div");
         productoDiv.classList.add("producto");
         productoDiv.innerHTML = `
-            <img src="${imagen}" alt="${nombre}">
-            <h4>${nombre}</h4>
-            <p>${descripcion}</p>
-            <p>Precio: $${precio}</p>
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h4>${producto.nombre}</h4>
+            <p>${producto.descripcion}</p>
+            <p>Precio: $${producto.precio}</p>
+            <p>Categoria: ${producto.categoria}</p>
+            <p>Cantidad: ${producto.cantidad}</p>
         `;
         document.getElementById("lista-productos").appendChild(productoDiv);
-
-        // Limpiar el formulario
-        document.getElementById("form-producto").reset();
-
-        // Cambiar a la vista de productos para ver el producto agregado
-        mostrarSeccion("productos");
-    });
+    }
 
     function mostrarSeccion(seccionId) {
         document.getElementById("agregar-producto").style.display = "none";
@@ -54,21 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const offersContainer = document.getElementById('offers-container');
     offersContainer.innerHTML = ''; // Limpiar las ofertas previas
-
-    productosFiltrados.forEach((producto, index) => {
-        const productoDiv = document.createElement("div");
-        productoDiv.classList.add("offer-card");
-        productoDiv.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            <div class="offer-details">
-                <h3>${producto.nombre}</h3>
-                <p>${producto.descripcion}</p>
-                <p class="price">$${producto.precio}</p>
-                <button class="delete-btn" data-index="${index}" data-category="${categoria}">Eliminar</button>
-            </div>
-        `;
-        offersContainer.appendChild(productoDiv);
-    });
 
     // Asignar eventos a los botones de eliminar
     document.querySelectorAll('.delete-btn').forEach(button => {
