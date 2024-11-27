@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proveedores</title>
+    <link rel="stylesheet" href="../css/Proveedores.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Proveedores</h1>
+
+        <!-- Formulario para agregar un proveedor -->
+        <div class="provider-form">
+            <input type="text" id="nombre" placeholder="Nombre del proveedor" />
+            <input type="text" id="telefono" placeholder="Teléfono" />
+            <input type="text" id="direccion" placeholder="Dirección" />
+            <input type="email" id="correo" placeholder="Correo electrónico" />
+            <button id="add-provider-btn">Agregar Proveedor</button>
+        </div>
+
+        <!-- Lista de proveedores -->
+        <div class="providers-list">
+            <h2>Proveedores:</h2>
+            <ul id="providers-ul">
+                <!-- Los proveedores se cargarán aquí -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/Proveedores.js"></script>
+</body>
+</html>

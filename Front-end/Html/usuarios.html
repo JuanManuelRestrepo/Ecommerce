@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/usuarios.css">
+</head>
+<body>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <h1>CartsKing</h1>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html" class="nav-item"><i class="fas fa-plus"></i><span>Principal</span></a></li>
+                <li><a href="usuarios.html" class="nav-item"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+                <li><a href="carrito.html" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+                <li><a href="ajustes.html" class="nav-item"><i class="fas fa-cog"></i><span>Ajustes</span></a></li>
+                <li><a href="Pedidos.html" class="nav-item"><i class="fas fa-cog"></i><span>Pedidos</span></a></li>
+                <li><a href="#" id="logout-btn" class="nav-item"><i class="fas fa-sign-out-alt"></i><span>Cerrar Sesión</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Contenedor principal del perfil de usuario -->
+    <main class="user-profile">
+        <section class="user-description">
+            <div class="profile-picture">
+                <img src="../img/usuario.png" alt="Foto de usuario">
+            </div>
+            <div class="profile-info">
+                <h2 id="user-name">Cargando...</h2>
+                <p id="user-email">Cargando...</p>
+                <p id="user-phone">Cargando...</p>
+                <p id="user-direccion">Cargando...</p>
+            </div>
+        </section>
+
+
+        <!-- Contenedor de ajustes de informacion personal (usuarios) -->
+        <section class="content-box">
+            <div class="icon-container">
+                <img src="../img/usuario.png" alt="icono de usuarios">
+            </div>
+            <a href="personal.html">
+                <h3>Información personal</h3>
+
+            </a>
+        </section>
+
+        <!-- Contenedor de verificacion de compras (carrito) -->
+        <section class="content-box">
+            <div class="icon-container">
+                <img src="../../img/carrito.png" alt="icono de carrito">
+            </div>
+            <a href="carrito.html">
+            <h3>Verificacion de compras</h3>
+            <h5>Realiza un chequeo de tu historial de compras </h5>
+            </a>
+        </section>
+
+        <!-- Contenedor de Seguridad -->
+        <section class="content-box" >
+            <h3>Seguridad</h3>
+            <h5>Controles para la seguridad de tu cuenta</h5>
+        </section>
+        
+
+    </main>
+
+    <script src="../js/usuarios.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="../css/ajustes1.css">
+    <!-- Incluyendo FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <h1>CartsKing</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item"><i class="fas fa-plus"></i><span>Principal</span></a></li>
+                    <li><a href="usuarios.html" class="nav-item"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+                    <li><a href="carrito.html" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+                    <li><a href="ajustes.html" class="nav-item"><i class="fas fa-cog"></i><span>Ajustes</span></a></li>
+                    <li><a href="Pedidos.html" class="nav-item"><i class="fas fa-cog"></i><span>Pedidos</span></a></li>
+                    <li><a href="#" id="logout-btn" class="nav-item"><i class="fas fa-sign-out-alt"></i><span>Cerrar Sesión</span></a></li>
+                 
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <header>
+                <h1>Panel de Administración</h1>
+            </header>
+            <main>
+                <section class="cards-container">
+                    <div class="card">
+                        <h2>Gestión de Usuarios</h2>
+                        <p>Administra los usuarios del sistema, creando, editando y eliminando perfiles.</p>
+                        <a href="GestionUsuario.html" class="card-link">Ir a Gestión</a>
+                    </div>
+                    <div class="card">
+                        <h2>Categorías</h2>
+                        <p>Administra las categorías de productos, añadiendo nuevas o editando existentes.</p>
+                        <a href="Categoria.html" class="card-link">Ir a Categorías</a>
+                    </div>
+                    <div class="card">
+                        <h2>Gestión de Productos</h2>
+                        <p>Administra el catálogo de productos, añadiendo, modificando o eliminando productos.</p>
+                        <a href="Productos.html" class="card-link">Ir a Productos</a>
+                    </div>
+                    <div class="card">
+                        <h2>Proveedores</h2>
+                        <p>Administra los proveedores del sistema, gestionando sus datos y productos ofrecidos.</p>
+                        <a href="Proveedores.html" class="card-link">Ir a Proveedores</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Script para manejar la activación del sidebar en pantallas pequeñas -->
+    <!-- Script para manejar la activación del sidebar en pantallas pequeñas -->
+<script>
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            sessionStorage.removeItem('usuarioActual');
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = 'index.html';
+        });
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h3 {
+    color: #333;
+}
+
+/* Estilos del contenedor principal de gestión de productos */
+#gestionar-productos {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario de producto */
+#product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos comunes para los campos de formulario (input, textarea, select, button) */
+#product-form input,
+#product-form textarea,
+#product-form select,
+#product-form button,
+#update-product-form input,
+#update-product-form textarea,
+#update-product-form select,
+#update-product-form button,
+#form-actualizar-producto input[type="text"],
+#form-actualizar-producto input[type="number"],
+#form-actualizar-producto textarea,
+#form-actualizar-producto select {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Botón en los formularios */
+#product-form button,
+#update-product-form button,
+#form-actualizar-producto button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#product-form button:hover,
+#update-product-form button:hover,
+#form-actualizar-producto button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo de la lista de productos */
+#product-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#product-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#product-list button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#product-list button.update-btn {
+    background-color: #4CAF50;
+}
+
+#product-list button:hover {
+    background-color: #333;
+}
+
+/* Estilos para el Modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los formularios dentro del modal (actualización de producto) */
+#update-product-form input,
+#update-product-form textarea,
+#update-product-form select,
+#update-product-form button {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#update-product-form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#update-product-form button:hover {
+    background-color: #45a049;
+}
+
+/* Botón de cierre del modal */
+#close-modal-btn {
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+
+#close-modal-btn:hover {
+    background-color: #e53935;
+}
+
+/* Estilo del formulario de actualización de producto */
+#form-actualizar-producto {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario de actualización */
+#form-actualizar-producto h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Campos de entrada de texto en el formulario de actualización */
+#form-actualizar-producto input[type="text"],
+#form-actualizar-producto input[type="number"],
+#form-actualizar-producto textarea,
+#form-actualizar-producto select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilo del campo de texto (descripción) en el formulario de actualización */
+#form-actualizar-producto textarea {
+    height: 150px;
+}
+
+/* Estilo de los selectores (categoría y proveedor) en el formulario de actualización */
+#form-actualizar-producto select {
+    height: 40px;
+}
+
+/* Estilos para las etiquetas de los campos de formulario */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilos para los mensajes de error o éxito */
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.info {
+    background-color: #2196F3;
+}

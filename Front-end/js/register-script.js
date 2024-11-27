@@ -1,62 +1,77 @@
-// register-script.js
 document.getElementById('register-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
     // Obtener valores del formulario
     const fullname = document.getElementById('fullname').value;
     const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+    const Direccion = document.getElementById('address').value;  // La dirección sigue siendo string
+    let phone = document.getElementById('phone').value;  // Este debe ser un número entero
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
-    
+
     // Validación del formulario
     let isValid = true;
-    
+
     // Validar nombre
     if (fullname.trim().length < 3) {
-        showError('fullname', 'Name must be at least 3 characters long');
+        showError('fullname', 'El nombre debe tener al menos 3 caracteres');
         isValid = false;
     }
-    
+
     // Validar email
     if (!isValidEmail(email)) {
-        showError('email', 'Please enter a valid email address');
+        showError('email', 'Por favor, introduce una dirección de correo válida');
         isValid = false;
     }
-    
+
     // Validar teléfono
-    if (!phone.match(/^\d{10}$/)) {
-        showError('phone', 'Please enter a valid 10-digit phone number');
+    if (phone && !/^\d+$/.test(phone)) {
+        showError('phone', 'Por favor, introduce un número de teléfono válido');
         isValid = false;
+    } else {
+        // Convertir teléfono a número entero (int)
+        phone = phone ? parseInt(phone, 10) : null;  // Aseguramos que sea un entero
     }
-    
+
     // Validar contraseña
     if (password.length < 8) {
-        showError('password', 'Password must be at least 8 characters long');
+        showError('password', 'La contraseña debe tener al menos 8 caracteres');
         isValid = false;
     }
-    
+
     // Validar confirmación de contraseña
     if (password !== confirmPassword) {
-        showError('confirm-password', 'Passwords do not match');
+        showError('confirm-password', 'Las contraseñas no coinciden');
         isValid = false;
     }
-    
+
     if (isValid) {
-        // Aquí iría la lógica para enviar los datos al servidor
+        // Verificar los datos antes de enviarlos
+        console.log("Datos antes de enviar:", { 
+            Name: fullname, 
+            Email: email, 
+            Direccion: Direccion, 
+            Telefono: phone, 
+            Contraseña: password 
+        });
+
+        // Datos a enviar al servidor (envolver en usuarioDTO)
         const userData = {
-            fullname,
-            email,
-            phone,
-            password
+            name: fullname,  // Usar el valor del formulario
+            email: email,    // Usar el valor del formulario
+            direccion: Direccion,  // La dirección sigue siendo string
+            telefono: phone,  // El teléfono debe ser un número entero
+            contraseña: password  // Usar el valor del formulario
         };
-        
-        // Ejemplo de envío de datos al servidor (deberás implementar esto)
+
+        console.log("Enviando datos:", userData);
+
+        // Llamada a la API para registrar usuario
         registerUser(userData);
     }
 });
 
-// Función para mostrar errores
+// Función para mostrar errores en los campos del formulario
 function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
     field.classList.add('error');
@@ -80,39 +95,35 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Función para registrar usuario (deberás implementar la conexión con el servidor)
+// Función para registrar usuario llamando a la API
 async function registerUser(userData) {
     try {
-        // Aqui se hace el llamado del api de registro
-        /*
-        const response = await fetch('api/register.php', {
+        console.log('Enviando datos de registro:', userData);
+
+        const response = await fetch('https://localhost:57199/api/Usuario/CreateUsuario', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'accept': '*/*'
             },
             body: JSON.stringify(userData)
         });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            window.location.href = 'login.html';
+
+        if (response.ok) {
+            const message = await response.text();
+            console.log('Registro exitoso:', message);
+            alert('Registro exitoso! Ahora puedes iniciar sesión');
+            window.location.href = '../Html/index.html';  // Redirigir a la página de inicio
         } else {
-            alert(data.message);
+            const errorMessage = await response.text();
+            console.error('Error en el registro:', errorMessage);
+            alert(`Error en el registro: ${errorMessage}`);
         }
-        */
-        
-        // Por ahora, solo mostraremos un mensaje de éxito
-        alert('Registration successful! You can now login.');
-        window.location.href = 'login.html';
     } catch (error) {
-        console.error('Error during registration:', error);
-        alert('An error occurred during registration. Please try again.');
+        console.error('Error durante el registro:', error);
+        alert('Ocurrió un error durante el registro. Por favor, inténtalo de nuevo.');
     }
 }
-// En login.js y register.js, después de un login/registro exitoso:
-sessionStorage.setItem('isLoggedIn', 'true');
-window.location.href = 'dashboard.html';
 
 // Limpiar errores cuando el usuario comienza a escribir
 document.querySelectorAll('input').forEach(input => {

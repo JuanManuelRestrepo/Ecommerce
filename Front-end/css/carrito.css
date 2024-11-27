@@ -1,33 +1,27 @@
-/* usuarios.css */
-
-/* Variables de color para personalización */
+/* Variables */
 :root {
     --primary-color: #6c5ce7;
     --secondary-color: #a29bfe;
     --background-color: #f8f9fa;
-    --sidebar-background: #f3e9fe;
     --text-color: #2d3436;
-    --icon-color: #2d3436;
-    --card-background: #ffffff;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --border-radius: 10px;
-    --spacing: 20px;
+    --sidebar-width: 250px;
 }
 
-/* Reset básico */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Layout principal */
 .layout {
     display: flex;
     min-height: 100vh;
+    background-color: var(--background-color);
 }
 
-/* Estilos de la barra lateral */
+/* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
     background-color: white;
@@ -47,6 +41,7 @@ body {
 
 .sidebar-nav ul {
     list-style: none;
+    padding: 0;
 }
 
 .nav-item {
@@ -60,79 +55,117 @@ body {
     transition: background-color 0.3s;
 }
 
-.nav-item:hover {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
 .nav-item i {
     margin-right: 15px;
     width: 20px;
     text-align: center;
 }
 
-/* Contenedor de perfil de usuario */
-.user-profile {
-    max-width: 800px; /* Aumenta el ancho máximo */
-    width: 100%; /* Asegura que el elemento ocupe el 100% del contenedor */
-    margin: auto;
-    padding: var(--spacing);
-    background-color: var(--card-background);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+.nav-item:hover {
+    background-color: var(--secondary-color);
+    color: white;
 }
 
-.profile-picture {
+.nav-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.top-bar {
+    margin-bottom: 20px;
+}
+
+.top-bar h1 {
+    font-size: 28px;
+    color: var(--text-color);
+}
+
+/* Carrito */
+.cart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cart-item {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente si el contenedor tiene altura */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-.profile-picture img {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
+.cart-item-title {
+    font-size: 18px;
+    font-weight: bold;
 }
 
-/* Estilos para la lista de productos */
-.product-list {
+.cart-item-quantity,
+.cart-item-price {
+    font-size: 16px;
+}
+
+.cart-total {
     text-align: center;
     margin-top: 20px;
 }
 
-.product-list img {
-    max-width: 300px;
-    height: auto;
+#checkout-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
-.product-list p {
+#checkout-btn:hover {
+    background-color: #5a4dbc;
+}
+/* Estilo base del botón */
+#place-order-btn {
+    padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    font-weight: bold;
 }
 
-.ver-ofertas {
-    display: block;
-    margin-top: 10px;
-    color: blue;
-    text-decoration: none;
+/* Estilo cuando el carrito tiene productos (botón habilitado) */
+#place-order-btn:not(:disabled) {
+    background-color: #28a745; /* Verde */
+    color: white;
 }
 
-.ver-ofertas:hover {
-    text-decoration: underline;
+#place-order-btn:not(:disabled):hover {
+    background-color: #218838; /* Verde oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandar */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        left: -var(--sidebar-width);
-        height: 100%;
-        z-index: 1000;
-        transition: left 0.3s;
-    }
+/* Estilo cuando el carrito está vacío (botón deshabilitado) */
+#place-order-btn:disabled {
+    background-color: #6c757d; /* Gris */
+    color: white;
+    cursor: not-allowed;
+}
 
-    .sidebar.active {
-        left: 0;
-    }
+/* Estilo cuando el carrito está vacío y el botón está deshabilitado */
+#place-order-btn:disabled:hover {
+    background-color: #6c757d; /* Gris, no cambia el color al pasar el ratón */
+    transform: none; /* No hace el efecto de agrandar */
 }

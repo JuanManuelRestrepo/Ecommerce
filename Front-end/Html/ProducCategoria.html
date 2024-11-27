@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos de Categoría</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <h1>CartsKing</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item"><i class="fas fa-plus"></i><span>Principal</span></a></li>
+                    <li><a href="usuarios.html" class="nav-item"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+                    <li><a href="carrito.html" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+                    <li><a href="ajustes.html" class="nav-item"><i class="fas fa-cog"></i><span>Ajustes</span></a></li>
+                    <li><a href="Pedidos.html" class="nav-item"><i class="fas fa-cog"></i><span>Pedidos</span></a></li>
+                    <li><a href="#" id="logout-btn" class="nav-item"><i class="fas fa-sign-out-alt"></i><span>Cerrar Sesión</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <!-- Barra superior -->
+            <header class="top-bar">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="top-bar-right">
+                    <button class="notification-btn"><i class="fas fa-bell"></i></button>
+                    <button class="settings-btn"><i class="fas fa-cog"></i></button>
+                </div>
+            </header>
+
+<!-- Sección de productos de la categoría -->
+            <section class="category-products-section">
+                <div class="section-header">
+                    <!-- El nombre de la categoría será cargado aquí -->
+                    <h1 id="category-title"></h1>
+                </div>
+
+                <!-- Contenedor de productos de la categoría -->
+                <div id="products-container" class="products-grid">
+                    <!-- Los productos de la categoría se cargarán aquí -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Incluyendo el archivo JS -->
+    <script src="../js/ProductCategoria.js"></script>
+</body>
+</html>
