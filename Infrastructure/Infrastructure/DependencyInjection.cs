@@ -1,0 +1,42 @@
+﻿using Domain.Repositories;
+using Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Infrastructure
+{
+    public static class DependencyInjection
+    {
+        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+        {
+
+            var c = configuration.GetConnectionString("DefaultConnection");
+            //aca van los repositorios
+          
+
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IProductoRepository, ProductoRepository>();
+            services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+            services.AddScoped<IProveedorRepository, ProveedorRepository>();
+            services.AddScoped<IInventarioRepository, InventarioRepository>();
+            services.AddScoped<IPagoRepository, PagoRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
+
+           
+            
+            services.AddDbContext<AppDbContext>(options => {
+
+
+                options.UseSqlServer(c);
+            });
+            return services;
+        }
+    }
+}
